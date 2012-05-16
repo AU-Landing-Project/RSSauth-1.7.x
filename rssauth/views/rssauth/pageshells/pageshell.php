@@ -37,9 +37,18 @@ $url = str_replace('&password=' . $_GET['password'],'', $url);
 <channel>
 	<title><![CDATA[<?php echo $title; ?>]]></title>
 	<link><?php echo htmlentities($url); ?></link>
-	<?php echo elgg_view('extensions/channel'); ?>
 	<?php
+		// where is this view?  adds <description /> in regular rss
+		$extensions = elgg_view('extensions/channel');
+		if(!empty($extensions)){
+			echo $extensions;
+		}
+		else{
+			echo '<description />';
+		}
+	?>
 
+	<?php
 		echo $vars['body'];
 
 	?>
