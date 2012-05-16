@@ -1,0 +1,7 @@
+== Version ==
+
+x.x:
+
+1.1 (05/16/2012):
+
+- Added workaround for missing <description /> tag in channel
